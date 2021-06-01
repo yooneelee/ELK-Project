@@ -32,13 +32,14 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below. Note: Use the Markdown Table Generator to add/remove values from the table.
 
-Name	Function	IP Address	Operating System
-Jumpbox	Gateway	10.0.1.4	Linux ubuntu 18.04
-DVWA-VM1	VM	10.0.1.7	Linux ubuntu 18.04
-DVWA-VM2	VM	10.0.1.8	Linux ubuntu 18.04
-DVWA-VM3	VM	10.0.1.9	Linux ubuntu 18.04
-DVWA-VM4	VM	10.0.1.10	Linux ubuntu 18.04
-ELK VM	ElkStack	10.0.1.12	Linux ubuntu 18.04
+Name | Function | IP Address | Operating System | 
+------------ | ------------- | ------------- | -------------
+Jumpbox | 	Gateway | 10.0.1.4 | Linux ubuntu 18.04
+DVWA-VM1 | VM | 10.0.1.7 | Linux ubuntu 18.04
+DVWA-VM2| VM | 10.0.1.8 | Linux ubuntu 18.04
+DVWA-VM3 | VM | 10.0.1.9 | Linux ubuntu 18.04
+DVWA-VM4 | VM | 10.0.1.10 | Linux ubuntu 18.04
+ELK VM | ElkStack | 10.0.1.12 | Linux ubuntu 18.04
 
 ## Access Policies
 The machines on the internal network are not exposed to the public Internet.
@@ -53,10 +54,11 @@ Machines within the network can only be accessed by Port 22.
 
 A summary of the access policies in place can be found in the table below.
 
-Name	Publicly Accessible	Allowed IP Addresses
-Jump Box	No	72.84.225.151
-DVWA-VMs	No	10.0.1.4
-ELK Stack	No	10.0.1.4
+Name | Publicly Accessible | Allowed Addresses | 
+------------ | ------------- | ------------- 
+Jumpbox | no | 72.84.225.151
+DVWA-VMs | no | 10.0.1.4
+ELK Stack| no | 10.0.1.4
 
 ## Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
@@ -70,6 +72,8 @@ Change the memory on the ELK VM
 - Install docker python module
 - Download and launch a docker elk stack
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+
+![alt text](https://github.com/yooneelee/ELK-Project/blob/main/Diagrams/ELK.png)
 
 
 ## Target Machines & Beats
@@ -96,4 +100,5 @@ SSH into the control node and follow the steps below:
 - Copy the Filebeat-configuration.yml file to the ELK VM.
 - Update the hosts file to include webservers 10.0.1.7, 10.0.1.8, 10.0.1.9, 10.0.1.10
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
+
 $ ansible-playbook filebeat-playbook.yml
